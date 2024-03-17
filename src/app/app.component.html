@@ -1,4 +1,4 @@
-<div class="p-grid">
+<!-- <div class="p-grid">
   <div class="p-col-12">
     <a [routerLink]="['/home']">Home</a>
   </div>
@@ -17,4 +17,35 @@
 </div>
 <br>
 
-<router-outlet></router-outlet>
+<router-outlet></router-outlet> -->
+
+<div>
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="side" [opened]="isSidenavOpen" class="sidenav">
+      <h1 class="header">SchoolSite</h1>
+      <mat-nav-list class="list-item">
+        <a mat-list-item routerLink="/home" class="header-text"><mat-icon class="icon">percent</mat-icon>Promos</a>
+      </mat-nav-list>
+      <mat-nav-list class="list-item">
+        <a mat-list-item routerLink="/schools" class="header-text"><mat-icon
+            class="icon">school</mat-icon>Schools</a>
+      </mat-nav-list>
+      <mat-nav-list class="list-item">
+        <a mat-list-item routerLink="/users" class="header-text"><mat-icon class="icon">person</mat-icon>Users</a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <div>
+        <div class="flex align-center gap m-left">
+          <button mat-icon-button (click)="toggleSidenav()">
+            <mat-icon inline class="menu-icon">menu</mat-icon>
+          </button>
+        </div>
+        <div class="main-content">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

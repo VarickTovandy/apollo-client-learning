@@ -2,10 +2,15 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { HomeModule } from './home/home.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { Apollo, APOLLO_OPTIONS } from 'apollo-angular';
+import { HttpLink } from 'apollo-angular/http';
+import { InMemoryCache, ApolloClient, createHttpLink } from '@apollo/client/core';
+import { SharedModule } from './shared/shared.module';
 import { AuthGuard } from './auth/auth.guard';
 
 
@@ -45,6 +50,7 @@ const appRoutes: Routes = [
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent
@@ -55,11 +61,12 @@ const appRoutes: Routes = [
     GraphQLModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes, {preloadingStrategy: PreloadAllModules }),
+    HomeModule,
+    SharedModule,
   ],
   exports: [
     RouterModule,
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
