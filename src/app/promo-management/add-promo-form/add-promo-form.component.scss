@@ -1,0 +1,43 @@
+// .form-container {
+//     max-width: 400px;
+//     margin: 20px auto;
+//     padding: 20px;
+//     border-radius: 5px;
+//     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+//   }
+
+.close-icon {
+  font-size: 32px;
+  color: white;
+  font-weight: 700;
+}
+
+.form-container>div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-container>div>h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.form-container>div>button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.form-container form {
+  margin-top: 20px;
+}
+
+.mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+button[type="submit"] {
+  width: 100%;
+}

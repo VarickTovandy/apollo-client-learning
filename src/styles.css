@@ -10,3 +10,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .table-container {
     padding: 20px 200px;
 }
+
+.button {
+    background-color: #2a4d69;
+}
+
+.mat-dialog-container {
+    background-color: #2a4d69;
+}

@@ -1,1 +1,7 @@
-<p>promo-card-list works!</p>
+<mat-card class="promo-card" (click)="openPromoDetail()">
+    <img [src]="promo.image_url" alt="Promo Image" class="promo-image">
+    <div mat-card-header class="header">
+        <mat-card-title class="title">{{ promo.title }}</mat-card-title>
+        <mat-card-subtitle class="card-subtitle">{{ promo.sub_title }}</mat-card-subtitle>
+    </div>
+</mat-card>

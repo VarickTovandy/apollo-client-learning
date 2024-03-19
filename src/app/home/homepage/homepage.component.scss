@@ -5,7 +5,7 @@
 }
 
 .promo-card {
-    margin-bottom: 20px;
+    padding: 10px;
 }
 
 .header {
@@ -19,6 +19,10 @@
     width: 64px;
     height: 64px;
     border-radius: 50%;
+}
+
+.card-subtitle {
+    margin-bottom: 12px !important;
 }
 
 .loading-spinner-container {

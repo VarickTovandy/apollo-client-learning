@@ -1,0 +1,17 @@
+<div class="promo-details">
+    <div class="header">
+        <div class="back-header">
+            <button mat-icon-button (click)="backToPromo()"><mat-icon class="back-icon">arrow_back_ios</mat-icon></button>
+            <h1>Promo Details</h1>
+        </div>
+        <div class="back-header">
+            <button mat-icon-button (click)="deletePromo()" class="icon"><mat-icon>delete</mat-icon></button>
+            <button mat-icon-button (click)="openUpdatePromo()" class="icon"><mat-icon>edit</mat-icon></button>
+        </div>
+    </div>
+    <img [src]="promo.image_url" alt="Promo Image" class="promo-image" (error)="handleImageError($event)">
+    <h2>{{ promo.title }}</h2>
+    <h3>{{ promo.sub_title }}</h3>
+    <p>Status: {{ promo.status }}</p>
+    <p>{{ promo.description }}</p>
+</div>

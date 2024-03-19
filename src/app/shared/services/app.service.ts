@@ -11,25 +11,26 @@ export class AppService {
 
   constructor(private http: HttpClient, private apollo: Apollo) { }
 
-  getAllPromos(): Observable<any> {
+  getAllPromos(page: number, pageSize: number): Observable<any> {
     return this.apollo.query({
       query: gql`
-        query {
-          GetAllPromos {
+        query GetAllPromos($page: Int!, $pageSize: Int!) {
+          GetAllPromos(pagination: { page: $page, limit: $pageSize }) {
             _id
             title
             sub_title
             description
             image_url
             status
+            count_document
           }
         }
       `,
       variables: {
-        pagination: {
-          limit: 10
-        }
-      }
+        page,
+        pageSize
+      },
+      fetchPolicy: 'network-only'
     });
   }
 
@@ -66,12 +67,7 @@ export class AppService {
       `,
       variables: {
         pagination: pagination
-      },
-      // context: {
-      //   headers: {
-      //     Authorization: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ1MWQwMzVhNmFiODZmZWIxZmM0YjMiLCJlbWFpbCI6Impvc2h1YS5tZWx2aW5AemV0dGFieXRlLnNnIiwiaWF0IjoxNzEwNDg3NTQ4LCJleHAiOjE3MTA1NzM5NDh9.bj8PBesLANrOdF6Y4lC965yPJGem1O-zPhzLQtuHjvg`
-      //   }
-      // }
+      }
     });
   }
 }

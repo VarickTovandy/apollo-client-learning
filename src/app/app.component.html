@@ -18,17 +18,16 @@
 <br>
 
 <router-outlet></router-outlet> -->
-
 <div>
   <mat-sidenav-container class="sidenav-container">
     <mat-sidenav #sidenav mode="side" [opened]="isSidenavOpen" class="sidenav">
-      <h1 class="header">SchoolSite</h1>
+      <h1 class="header">Web Admin</h1>
+      <hr>
       <mat-nav-list class="list-item">
-        <a mat-list-item routerLink="/home" class="header-text"><mat-icon class="icon">percent</mat-icon>Promos</a>
+        <a mat-list-item routerLink="/promo" class="header-text"><mat-icon class="icon">percent</mat-icon>Promos</a>
       </mat-nav-list>
       <mat-nav-list class="list-item">
-        <a mat-list-item routerLink="/schools" class="header-text"><mat-icon
-            class="icon">school</mat-icon>Schools</a>
+        <a mat-list-item routerLink="/schools" class="header-text"><mat-icon class="icon">school</mat-icon>Schools</a>
       </mat-nav-list>
       <mat-nav-list class="list-item">
         <a mat-list-item routerLink="/users" class="header-text"><mat-icon class="icon">person</mat-icon>Users</a>
@@ -36,12 +35,14 @@
     </mat-sidenav>
 
     <mat-sidenav-content>
-      <div>
+      <div class="navbar">
         <div class="flex align-center gap m-left">
           <button mat-icon-button (click)="toggleSidenav()">
             <mat-icon inline class="menu-icon">menu</mat-icon>
           </button>
         </div>
+      </div>
+      <div>
         <div class="main-content">
           <router-outlet></router-outlet>
         </div>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { AppService } from 'src/app/shared/services/app.service';
+import { AddPromoFormComponent } from 'src/app/promo-management/add-promo-form/add-promo-form.component';
 
 @Component({
   selector: 'app-homepage',
@@ -7,19 +9,12 @@ import { AppService } from 'src/app/shared/services/app.service';
   styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent implements OnInit {
-  promos: any[] = [];
 
-  constructor(private appService: AppService) { }
+  constructor(
+  ) { }
 
   ngOnInit(): void {
-    this.appService.getAllPromos().subscribe(
-      data => {
-        this.promos = data.data.GetAllPromos;
-      },
-      error => {
-        console.log('Error:', error);
-      }
-    )
+
   }
 
 }

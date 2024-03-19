@@ -1,8 +1,34 @@
-<div class="p-grid">
-  <div class="p-col-6">
-    <app-add-promo-form></app-add-promo-form>
+<div *ngIf="promos.length === 0" class="loading-spinner-container">
+  <mat-spinner diameter="50"></mat-spinner>
+</div>
+
+<div class="container">
+  <div class="promo-header">
+    <button mat-raised-button (click)="openForm()" class="add-button button">Add Promo</button>
+    <div class="pagination-container">
+      <div class="items-per-page">
+        <span>Items per page: </span>
+        <select class="items-per-page-select" [(ngModel)]="pageSize" (ngModelChange)="onPageSizeChange($event)">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+      </div>
+      <div class="pagination-controls">
+        <button class="pagination-button" mat-icon-button (click)="onPreviousPage()" [disabled]="currentPage === 0">
+          <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+        <span class="current-page">{{ currentPage }}</span>
+        <button class="pagination-button" mat-icon-button (click)="onNextPage()" [disabled]="currentPage === getMaxPage()">
+          <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>
+      </div>
+    </div>    
   </div>
-  <div class="p-col-6">
-    <app-promo-card-list></app-promo-card-list>
+
+  <div class="grid-container">
+    <div *ngFor="let promo of promos">
+      <app-promo-card-list [promo]="promo"></app-promo-card-list>
+    </div>
   </div>
 </div>

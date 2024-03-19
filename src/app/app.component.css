@@ -1,17 +1,29 @@
+.mat-drawer-container {
+    background-color: #e6eff6 !important;
+}
+
 .sidenav-container {
     height: 100vh;
 }
 
 .header {
     font-size: 22px;
+    margin: 0;
     color: white;
-    line-height: 70px;
+    line-height: 100px;
     text-align: center;
     user-select: none;
 }
 
+hr {
+    margin: 0;
+    background-color: black;
+    opacity: 50%;
+}
+
 .sidenav {
     width: 13vw;
+    background-color: #2a4d69;
     /* padding: 0 20%; */
 }
 
@@ -37,4 +49,18 @@
 
 .list-item{
     width: 100%;
+}
+
+.navbar {
+    height: 10vh;
+    width: 100vw;
+    background-color: #4c86b4;
+    display: flex;
+    align-items: center;
+}
+
+.menu-icon {
+    color: #fff;
+    font-size: 32px !important;
+    margin-left: 20px;
 }

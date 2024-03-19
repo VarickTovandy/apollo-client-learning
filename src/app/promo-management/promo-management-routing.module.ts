@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PromoManagementComponent } from './promo-management.component';
+import { PromoDetailComponent } from './promo-detail/promo-detail.component';
 
 const routes: Routes = [
   {
@@ -8,6 +9,11 @@ const routes: Routes = [
     component: PromoManagementComponent,
     runGuardsAndResolvers: 'always',
   },
+  {
+    path: 'promo-details/:id',
+    component: PromoDetailComponent,
+    runGuardsAndResolvers: 'always'
+  }
 ];
 
 @NgModule({

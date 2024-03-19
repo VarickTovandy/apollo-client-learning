@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-promo-card-list',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./promo-card-list.component.scss']
 })
 export class PromoCardListComponent implements OnInit {
-
-  constructor() { }
+  @Input() promo: any;
+  
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
 
+  openPromoDetail() {
+    this.router.navigate(['promo/promo-details', this.promo._id])
+  }
 }
